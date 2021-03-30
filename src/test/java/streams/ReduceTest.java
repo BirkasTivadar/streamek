@@ -20,7 +20,7 @@ public class ReduceTest {
     void testReduce() {
         int lentgh = employees.stream().reduce(0,
                 (i, e) -> i + e.getName().length(),
-                (i1, i2) -> i1 + i2);
+                Integer::sum);
         // System.out.println(lentgh);
         assertEquals(38, lentgh);
     }
